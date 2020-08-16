@@ -1,0 +1,31 @@
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+template: |
+  # What's Changed
+
+  $CHANGES
+categories:
+  - title: 'Breaking Change'
+    label: 'breaking'
+  - title: 'New Features'
+    label: 'enhancement'
+  - title: 'Bug Fixes'
+    label: 'bug'
+  - title: 'Under the Hood'
+    label: 'under-the-hood'
+  - title: 'Documentation'
+    label: 'documentation'
+
+version-resolver:
+  major:
+    labels:
+      - 'breaking'
+  minor:
+    labels:
+      - 'enhancement'
+  patch:
+    labels:
+      - 'bug'
+      - 'under-the-hood'
+      - 'documentation'
+      - 'security'
