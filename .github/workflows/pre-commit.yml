@@ -9,11 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      name: Checkout PR branch
       with:
         fetch-depth: 0
     - uses: actions/setup-python@v2
+      name: Install Python
       with:
         python-version: 3.7
     - uses: pre-commit/action@v2.0.0
+      name: Run Black and Flake8
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
