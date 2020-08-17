@@ -1,11 +1,11 @@
-name: Build
+name: Codebuild
 
 on:
   pull_request:
     branches: [master]
 
 jobs:
-  build:
+  run-checks:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -17,7 +17,7 @@ jobs:
       with:
         python-version: 3.7
     - uses: pre-commit/action@v2.0.0
-      name: Run Black and Flake8
+      name: Run Hooks (black, flake8, etc.)
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: Test with Pytest
